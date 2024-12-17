@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiuuEditZ WEB</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Style body */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Container Loading */
+    #loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Animasi Loading 3 Lingkaran */
+    .dots {
+      display: flex;
+      justify-content: space-between;
+      width: 80px;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      background-color: #007bff;
+      border-radius: 50%;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+
+    .dot:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    /* Teks Loading */
+    #loading h1 {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    /* Konten Utama */
+    #main-content {
+      opacity: 0;
+      visibility: hidden;
+      font-size: 28px;
+      text-align: center;
+      background: url('https://source.unsplash.com/1600x900/?sunset') no-repeat center center/cover;
+      height: 100vh;
+      width: 100vw;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+      position: relative;
+    }
+
+    /* Footer Copyright */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Halaman Loading -->
+  <div id="loading">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <h1>Bentar cuyy...</h1>
+  </div>
+  
+  <!-- Konten Utama -->
+  <div id="main-content">
+    <div>
+      <h1>Sekk sabar, admin lagi buat webnya! 😅</h1>
+    </div>
+    <!-- Copyright Footer -->
+    <footer>
+      <p>
+        &copy; 2024 SiuuEditZ WEB. Semua Hak Dilindungi.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Script untuk Loading -->
+  <script>
+    // Tunggu 6 detik sebelum menampilkan konten utama dengan transisi
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('loading').style.display = 'none';
+        const mainContent = document.getElementById('main-content');
+        mainContent.style.visibility = 'visible';
+        mainContent.style.opacity = '1';
+      }, 6000); // Waktu loading dalam milidetik
+    };
+  </script>
+</body>
+</html>
+
+
